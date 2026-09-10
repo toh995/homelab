@@ -1,1 +1,5 @@
 */.env
+
+# This is DATA. It doesn't belong in the repo.
+# This repo holds configuration, not data.
+forgejo/forgejo/*

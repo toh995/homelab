@@ -1,2 +1,3 @@
 include:
+  - forgejo/compose.yaml
   - searxng/compose.yaml
