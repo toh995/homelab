@@ -33,7 +33,7 @@ services:
       - invidious-db
 
   companion:
-    image: quay.io/invidious/invidious-companion:latest
+    image: quay.io/invidious/invidious-companion:2026.09.12-6056083
     environment:
     # Use the key generated in the 2nd step
        - SERVER_SECRET_KEY=${COMPANION_KEY}
@@ -56,8 +56,8 @@ services:
     restart: always
     volumes:
       - postgresdata:/var/lib/postgresql/data
-      - ./config/sql:/config/sql
-      - ./docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh
+      - ./upstream/config/sql:/config/sql
+      - ./upstream/docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh
     environment:
       POSTGRES_DB: invidious
       POSTGRES_USER: kemal
